@@ -20,7 +20,7 @@ class DAOAdherent
      */
     public static function getAdherents() : array
     {
-        $requete = 'SELECT a.id_adh, estactif_adh, nom_adh, prenom_adh, datenaissance_adh, dateinscription_adh, datefincertifmed_adh, fonctionbureau_adh, estresponsablemateriel_adh, estresponsableplanning_adh, login_adh, mdp_adh, c.id_adh as idcoach, e.id_adh as identraineur FROM adherent a LEFT JOIN entraineur e on a.id_adh = e.id_adh LEFT JOIN coach c on e.id_adh = c.id_adh ORDER BY a.nom_adh ASC';
+        $requete = 'SELECT * from trombi';
         $resultatsRequete = DBInterface::executerRequete($requete);
         $adherents = array();
         foreach ($resultatsRequete as $ligneDeResultat) {
